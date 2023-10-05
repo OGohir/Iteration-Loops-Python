@@ -1,0 +1,57 @@
+#Omaima Gohir
+#5/2/2023
+#this code will return the volume of a square-based pyramid
+def vol_sqr_pyramid():
+    """ 
+    This function takes the users to input the height and base and checks 
+    if it is a positive integer(checks if its not negative or a letter)
+    
+    Preconditions:
+    base and height = positive integer
+    
+    Parameter:
+    The base and height and what is printed
+    
+    Returns:
+    The volume of square-based Pyramid 
+    
+    """
+
+#this part ensures that the user enters a valid number for the base; the base cannot equal a negative number or string.
+    base = input("Enter base:")
+#this line continues to run until the base. digit and base < 0, is not true.
+    while not  base.isdigit() or float(base) < 0: #.isdigit checks if its a number
+        print("Invalid Entry, PLEASE give positive number for the base!")
+        base = input("Enter base:")
+
+#this part ensures that the user enters a valid number for height; height cannot equal a negative number or string.
+    height = input("Enter height:")
+    while not  height.isdigit() or float(height) < 0: #.isdigit checks if its a number
+        print("Invalid Entry, PLEASE give positive number for the height!")
+        height = input("Enter height:")
+    return float(base), float(height)
+
+def calc_vol(base, height):
+    """ 
+    This function takes the users to input the height and base and checks 
+    if it is a positive integer(checks if its not negative or a letter)
+    
+    Preconditions:
+    base and height = positive integer
+    
+    Parameter:
+    The base and height and what is printed
+    
+    Returns:
+    The volume of square-based Pyramid 
+    
+    """
+    return (((base ** 2) * height) / 3)
+    
+    
+continue_or_not = "" #defining it to be an empty string
+while continue_or_not != "stop": #keeps looping until the user enters stop
+    base, height = vol_sqr_pyramid() #calling the first function
+    results = calc_vol(base, height) #calling the second function
+    print("The volume is:" , results) #printing the results
+    continue_or_not = input("say stop, to exit or type any key to continue") #letting the user enter their choice
